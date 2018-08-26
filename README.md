@@ -1,4 +1,5 @@
 # airq
+[godoc](https://godoc.org/github.com/JedBeom/airq)
 
 [공공 데이터 포털](https://www.data.go.kr/dataset/15000581/openapi.do)을 이용해 대기 오염 정보를 불러오는 패키지입니다.
 
