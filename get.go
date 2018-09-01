@@ -37,8 +37,6 @@ func GetAirqByStation(stationName string, rows int) (qualities []AirQuality, err
 	}
 
 	if aE.Msg != "NORMAL SERVICE." { // 만약 정상적인 응답이 아니라면
-		fmt.Println(link)
-		fmt.Println(aE)
 		err = errors.New(aE.Msg)       // resultMsg의 내용을 에러로 변환.
 		err = errors.Wrap(err, "airq") // 에러 앞에 airq: 를 덧붙임.
 		return
@@ -77,6 +75,12 @@ func GetAirqByStation(stationName string, rows int) (qualities []AirQuality, err
 func GetAirqOfNowByStation(stationName string) (quality AirQuality, err error) {
 	qualities, err := GetAirqByStation(stationName, 1)
 	if err != nil {
+		return
+	}
+
+	if len(qualities) == 0 {
+		err = errors.New("No airq; Maybe stationName was wrong")
+		err = errors.Wrap(err, "airq")
 		return
 	}
 	quality = qualities[0]

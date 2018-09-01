@@ -1,7 +1,6 @@
 package airq
 
 import (
-	"encoding/xml"
 	"time"
 )
 
@@ -9,6 +8,8 @@ import (
 type AirQuality struct {
 	DataTimeString string    `xml:"body>items>item>dataTime"` // 오염도 측정 연-월-일 시간:분
 	DataTime       time.Time // DataTimeString 변수를 time.Time으로 파싱 후 저장하기 위함.
+
+	MangName string `xml:"body>items>item>mangName"` // 측정망 정보 (국가배경, 교외대기, 도시대기, 도로변대기)
 
 	So2Value float32 `xml:"body>items>item>so2Value"` // 아황산가스 농도 (ppm)
 	Co2Value float32 `xml:"body>items>item>co2Value"` // 일산화탄소 농도 (ppm)
@@ -41,7 +42,6 @@ type AirQuality struct {
 // apiError 구조체는 api 이용 시 에러가 났을 경우에 그 에러 내용을 파싱하기 위한 구조체이다.
 // error가 아니다.
 type apiError struct {
-	XMLName xml.Name `xml:"response"`
-	Code    string   `xml:"header>resultCode"`
-	Msg     string   `xml:"header>resultMsg"`
+	Code string `xml:"header>resultCode"`
+	Msg  string `xml:"header>resultMsg"`
 }

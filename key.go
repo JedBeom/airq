@@ -8,7 +8,7 @@ var (
 	serviceKey string
 )
 
-// SerServiceKey 함수는 서비스 키를 직접 인자로 받습니다. 추천하지 않습니다.
+// SetServiceKey 함수는 서비스 키를 직접 인자로 받습니다. 추천하지 않습니다.
 func SetServiceKey(key string) {
 	serviceKey = key
 }
