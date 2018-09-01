@@ -1,5 +1,6 @@
 # airq
 [![GoDoc](https://godoc.org/github.com/JedBeom/airq?status.svg)](https://godoc.org/github.com/JedBeom/airq)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Jedbeom/airq)](https://goreportcard.com/report/github.com/Jedbeom/airq)
 
 ```shell
 $ go get -u github.com/JedBeom/airq
