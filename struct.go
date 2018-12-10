@@ -9,6 +9,8 @@ type AirQuality struct {
 	DataTimeString string    `xml:"body>items>item>dataTime"` // 오염도 측정 연-월-일 시간:분
 	DataTime       time.Time // DataTimeString 변수를 time.Time으로 파싱 후 저장하기 위함.
 
+	StationName string // 측정소 이름
+
 	MangName string `xml:"body>items>item>mangName"` // 측정망 정보 (국가배경, 교외대기, 도시대기, 도로변대기)
 
 	So2Value float32 `xml:"body>items>item>so2Value"` // 아황산가스 농도 (ppm)
