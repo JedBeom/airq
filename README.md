@@ -12,6 +12,12 @@ $ go get -u github.com/JedBeom/airq
 
 ## Example
 
+key.txt
+```
+yourservicekeyhere
+```
+
+
 ```go
 package main
 
@@ -26,7 +32,7 @@ func main() {
         panic(err)
     }
 
-    quality, err := airq.GetAirqOfNowByStation("종로구")
+    quality, err := airq.NowByStation("종로구")
     if err != nil {
         panic(err)
     }
@@ -34,9 +40,3 @@ func main() {
     fmt.Println(quality)
 }
 ```
-
-key.txt
-```
-yourservicekeyhere
-```
-

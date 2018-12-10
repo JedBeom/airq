@@ -1,4 +1,4 @@
-module github.com/jedbeom/airq
+module github.com/JedBeom/airq
 
 require (
 	github.com/araddon/dateparse v0.0.0-20181123171228-21df004e09ca
