@@ -84,7 +84,7 @@ func ByStation(stationName string, rows int) (qualities []AirQuality, err error)
 
 }
 
-// NowByStaion 함수는 ByStation 함수를 이용해 현재의 Airq만 리턴한다.
+// NowByStation 함수는 ByStation 함수를 이용해 현재의 Airq만 리턴한다.
 func NowByStation(stationName string) (quality AirQuality, err error) {
 	qualities, err := ByStation(stationName, 1)
 	if err != nil {
