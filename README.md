@@ -27,7 +27,7 @@ import (
 )
 
 func main() {
-    err := airq.LoadServiceKey("key.txt")
+    err := airq.GetKeyFile("key.txt")
     if err != nil {
         panic(err)
     }
