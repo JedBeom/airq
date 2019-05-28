@@ -28,12 +28,12 @@ func ByStation(stationName string, rows int) (qualities []AirQuality, err error)
 	link := fmt.Sprintf(apiLink, stationName, rows, serviceKey) // 링크 생성
 
 	resp, err := http.Get(link) // Get으로 응답을 받는다.
-	defer func() {
-		_ = resp.Body.Close() // 함수 종료 시 resp을 Close
-	}()
 	if err != nil {
 		return
 	}
+	defer func() {
+		_ = resp.Body.Close() // 함수 종료 시 resp을 Close
+	}()
 
 	data, err := ioutil.ReadAll(resp.Body) // resp.Body를 ioutil로 변환.
 	if err != nil {
